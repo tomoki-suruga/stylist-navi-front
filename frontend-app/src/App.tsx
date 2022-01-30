@@ -1,57 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import './css/App.css';
+import { HeaderButton } from './components/molequles/HeaderButton';
+import { sampleActions } from './features/sample/sampleSlice'
+import { useDispatch } from 'react-redux';
+import { SerchButton } from './components/molequles/SerchButton';
+import { TagButton } from './components/molequles/TagButton';
+import { PullDown } from './components/atoms/PullDown/PullDown';
+import { PageNation } from './components/organisms/PageNation'
 
 function App() {
+  const handlePaginate = (page: number) => {
+    // APIを叩きに行く処理
+    dispatch(sampleActions.sample())
+  }
+
+  const dispatch = useDispatch()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <header className="App-header">
+          <HeaderButton
+            text={'ログイン'}
+            action={() => dispatch(sampleActions.sample())}
+          />
+          <br/>
+          <HeaderButton
+            text={'新規登録'}
+            action={() => dispatch(sampleActions.sample())}
+          />
+        </header>
+        <br/>
+        <SerchButton
+          text={'この条件で検索する'}
+          action={() => dispatch(sampleActions.sample())}
+        />
+        <br/>
+        <br/>
+        <TagButton
+          text={'渋谷'}
+          action={() => dispatch(sampleActions.sample())}
+        />
+        <br/>
+        <PullDown name={'price-band'} texts={['10000', '20000', '30000', '40000', '50000']} action={() => dispatch(sampleActions.sample())}/>
+        <br/>
+        <br/>
+        <PageNation
+          totalPage={10}
+          onChange={(page: number) => handlePaginate(page)}
+        />
+      </div>
+    </>
   );
 }
 

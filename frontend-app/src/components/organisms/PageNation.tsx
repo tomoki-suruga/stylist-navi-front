@@ -53,11 +53,11 @@ export const PageNation:React.VFC<Props> = (props: Props) => {
           }
           <StyledUl>
             {
-              Array.from({length:totalPage},(v,k)=>k+1).map(page => {
+              Array.from({length:totalPage},(v,k)=>k+1).map((page, index) => {
                 let available = [1, currentPage, currentPage +1, currentPage -1, totalPage]
                 if(available.includes(page)) {
                   return (
-                    <li key={page} onClick={()=> handleMove(page)}>
+                    <li key={index} onClick={()=> handleMove(page)}>
                       <PagerButton
                         isActive={page === currentPage}
                         text={page.toString()}

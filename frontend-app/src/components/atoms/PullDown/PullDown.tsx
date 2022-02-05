@@ -27,7 +27,7 @@ export const PullDown: React.VFC<Props> = (props: Props) => {
         <StyledMenuHeader>{`${menu} ${mark}`}</StyledMenuHeader>   
         <StyledMenu
           hidden={!isOpenMenu}>
-          {props.texts.map(text => <StyledItem className="item" onClick={handleClick(text)}>{text}</StyledItem>)}
+          {props.texts.map((text, index) => <StyledItem key={index} className="item" onClick={handleClick(text)}>{text}</StyledItem>)}
         </StyledMenu>
       </StyledSelect>
     </>

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Action } from 'redux';
+import React from "react"
+import { Action } from "redux"
 
 type Props = {
   className?: string
@@ -8,13 +8,10 @@ type Props = {
   onClick?: () => void
 }
 
-export const Button:React.VFC<Props> = (props:Props) => {
-  const func = props.action ? props.action: props.onClick
+export const Button: React.VFC<Props> = (props: Props) => {
+  const func = props.action ? props.action : props.onClick
   return (
-    <button
-      className={props.className}
-      onClick={func}
-    >
+    <button className={props.className} onClick={func}>
       {props.text}
     </button>
   )

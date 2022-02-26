@@ -47,7 +47,7 @@ function App() {
         <br />
         <Stars evaluation={3} />
         <InputTextArea placeholder="エリア"></InputTextArea>
-        <SearchModal></SearchModal>
+        {/* <SearchModal></SearchModal> */}
       </div>
     </>
   )

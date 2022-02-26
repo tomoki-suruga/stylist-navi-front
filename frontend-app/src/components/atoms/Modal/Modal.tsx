@@ -45,6 +45,7 @@ const StyledModal = styled.div<ModalProps>`
   margin: auto;
   padding: 0;
   background-color: #ffffff;
+  border-radius: 4px;
   color: #666666;
   position: fixed;
   z-index: 2;

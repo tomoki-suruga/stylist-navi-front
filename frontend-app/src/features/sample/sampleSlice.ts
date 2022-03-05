@@ -12,14 +12,11 @@ const initialState: SampleState = {
   status: "idle",
 }
 
-export const incrementAsync = createAsyncThunk(
-  "sample/fetchSample",
-  async (amount: number) => {
-    const response = await fetchSample(amount)
-    // The value we return becomes the `fulfilled` action payload
-    return response.data
-  }
-)
+export const incrementAsync = createAsyncThunk("sample/fetchSample", async (amount: number) => {
+  const response = await fetchSample(amount)
+  // The value we return becomes the `fulfilled` action payload
+  return response.data
+})
 
 export const sampleSlice = createSlice({
   name: "sample",

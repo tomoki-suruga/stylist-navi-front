@@ -12,9 +12,9 @@ module.exports = {
       jsx: true,
     },
   },
-  extends: ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended", "prettier/react"],
+  extends: ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended", "prettier"],
   rules: {
     "prettier/prettier": "error",
-    semi: ["error", "always"],
+    semi: ["error", "never"],
   },
 }

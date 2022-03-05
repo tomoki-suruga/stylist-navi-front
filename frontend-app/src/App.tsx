@@ -6,17 +6,17 @@ import { useDispatch } from "react-redux"
 import { SerchButton } from "./components/molequles/SerchButton"
 import { TagButton } from "./components/molequles/TagButton"
 import { PullDown } from "./components/atoms/PullDown/PullDown"
-import { PageNation } from "./components/organisms/PageNation"
 import { Stars } from "./components/atoms/Stars"
 import { InputTextArea } from "./components/atoms/InputTextArea"
-import { Modal } from "./components/atoms/Modal/Modal"
-import { SearchModal } from "./components/organisms/SearchMoadal"
+import { Slider } from "./components/atoms/Slider/Slider"
+import "swiper/react/swiper.scss"
+import "swiper/components/pagination/pagination.scss"
 
 function App() {
-  const handlePaginate = (page: number) => {
-    // APIを叩きに行く処理
-    dispatch(sampleActions.sample())
-  }
+  // const handlePaginate = (page: number) => {
+  // APIを叩きに行く処理
+  // dispatch(sampleActions.sample())
+  // }
 
   const dispatch = useDispatch()
 
@@ -42,13 +42,16 @@ function App() {
         />
         <br />
         <br />
-        <PageNation totalPage={10} onChange={(page: number) => handlePaginate(page)} />
+        {/* <PageNation totalPage={10} onChange={(page: number) => handlePaginate(page)} /> */}
         <br />
         <br />
         <Stars evaluation={3} />
         <InputTextArea placeholder="エリア"></InputTextArea>
         {/* <SearchModal></SearchModal> */}
+        <Slider></Slider>
       </div>
+      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css" />
+      <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
     </>
   )
 }
